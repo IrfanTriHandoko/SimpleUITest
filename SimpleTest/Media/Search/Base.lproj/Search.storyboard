@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="9HF-sZ-SYP">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Food Gathering-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="SearchVC" customModule="SimpleTest" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Lzc-Os-nxf">
+                                <rect key="frame" x="0.0" y="68" width="414" height="740"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="separatorColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <inset key="separatorInset" minX="15" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                <color key="sectionIndexBackgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Kef-9b-dfZ">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="68"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Search by cuisine or restaurant name . . ." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="y1Z-fz-SLw">
+                                        <rect key="frame" x="24" y="16" width="366" height="36"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <action selector="searchAction:" destination="BYZ-38-t0r" eventType="editingChanged" id="Xx3-qJ-qE6"/>
+                                            <outlet property="delegate" destination="BYZ-38-t0r" id="2Re-lh-R9n"/>
+                                        </connections>
+                                    </textField>
+                                </subviews>
+                                <color key="backgroundColor" red="0.95686274510000002" green="0.26274509800000001" blue="0.21176470589999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="y1Z-fz-SLw" secondAttribute="trailing" constant="24" id="3oM-Ch-LAO"/>
+                                    <constraint firstAttribute="height" constant="68" id="Fld-4o-H8p"/>
+                                    <constraint firstAttribute="bottom" secondItem="y1Z-fz-SLw" secondAttribute="bottom" constant="16" id="LQV-tf-1Om"/>
+                                    <constraint firstItem="y1Z-fz-SLw" firstAttribute="leading" secondItem="Kef-9b-dfZ" secondAttribute="leading" constant="24" id="oOp-kv-Yiz"/>
+                                    <constraint firstItem="y1Z-fz-SLw" firstAttribute="top" secondItem="Kef-9b-dfZ" secondAttribute="top" constant="16" id="vJF-Jt-9Pm"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="0.0" green="0.78039215689999997" blue="0.81568627449999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="Lzc-Os-nxf" secondAttribute="trailing" id="C0w-wh-4vz"/>
+                            <constraint firstItem="Kef-9b-dfZ" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="Cq8-UX-FY9"/>
+                            <constraint firstItem="Lzc-Os-nxf" firstAttribute="top" secondItem="Kef-9b-dfZ" secondAttribute="bottom" id="aOf-Bu-fla"/>
+                            <constraint firstAttribute="trailing" secondItem="Kef-9b-dfZ" secondAttribute="trailing" id="app-5S-4RV"/>
+                            <constraint firstItem="Lzc-Os-nxf" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="b17-yo-Sp9"/>
+                            <constraint firstAttribute="bottom" secondItem="Lzc-Os-nxf" secondAttribute="bottom" id="eWV-6D-VF5"/>
+                            <constraint firstItem="Kef-9b-dfZ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="ogt-Pr-5WG"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Food Gathering" id="xMq-jD-2jR">
+                        <barButtonItem key="backBarButtonItem" title=" " id="uGo-xD-6NO"/>
+                        <barButtonItem key="rightBarButtonItem" title="Filter" id="g28-hi-27x"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="searchField" destination="y1Z-fz-SLw" id="0wY-yv-Tvl"/>
+                        <outlet property="tableView" destination="Lzc-Os-nxf" id="joO-Fc-oqL"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1047.8260869565217" y="99.776785714285708"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="sFv-Sm-hmB">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="9HF-sZ-SYP" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="l6a-zx-bKP">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="barTintColor" red="0.95686274510000002" green="0.26274509800000001" blue="0.21176470589999999" alpha="1" colorSpace="calibratedRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="EWD-xL-OOe"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uQi-fL-2SR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="137.68115942028987" y="99.776785714285708"/>
+        </scene>
+    </scenes>
+</document>
